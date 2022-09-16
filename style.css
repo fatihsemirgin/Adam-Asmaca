@@ -1,0 +1,271 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(139,50,92,1) 35%, rgba(0,212,255,1) 100%);
+}
+.head{
+    border-radius: 50%;
+    border-style: solid;
+    width: 50px;
+    height: 50px;
+    background-color: darkcyan;
+    position: relative;
+}
+.body{
+    width: 15px;
+    border: solid;
+    height: 180px;
+    background-color: darkcyan;
+    position: relative;
+}
+.left{
+    width: 15px;
+    border: solid;
+    height: 100px;
+    transform: rotate(15deg);
+    position: relative;
+    right: 20px;
+    background-color: darkcyan;
+}
+.right{
+    width: 15px;
+    border: solid;
+    height: 100px;
+    background-color: darkcyan;
+    position: relative;
+    top: -100px;
+    transform: rotate(-15deg);
+    left: 20px;
+}
+.leftl{
+    width: 15px;
+    border: solid ;
+    height: 75px;
+    transform: rotate(20deg);
+    background-color: darkcyan;
+    position: relative;
+    bottom: 350px;
+    right: 30px;
+}
+.rightl{
+    width: 15px;
+    border: solid;
+    height: 75px;
+    background-color: darkcyan;
+    position: relative;
+    bottom: 424px;
+    transform: rotate(-20deg);
+    left: 30px;
+}
+li{
+    width: 35px;
+    font-size: 50px;
+    color: blanchedalmond;
+    font-size: xx-large;
+    /* text-decoration: underline; */
+    margin-right: 8px;
+    
+    width: 20px; 
+}
+input{
+    border: solid 2px;
+    border-radius: 10%;
+    padding: 5px;
+    border-color: blanchedalmond;
+    background-color: blanchedalmond;
+}
+#harf{
+    position: relative;
+    border: solid blanchedalmond;
+    padding: 5px;
+    border-radius: 10%;
+}
+#tahmin{
+    position: relative;
+    padding: 5px;
+    border: solid blanchedalmond;
+    border-radius: 10%;
+}
+input:focus{
+    background-color: bisque;
+}
+#areaword{
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+}
+ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: center; 
+    flex-wrap: wrap;
+}
+#title{
+    font-size: 85px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 12px;
+    color: wheat;
+    animation-name: rounded ;
+    animation-duration: 4s;
+    /* animation-iteration-count: 2; */
+    animation-direction: reverse;
+}
+.row1{
+    height: 135px;
+    border: solid 2px;
+    background-color: #000000;
+    position: absolute;
+  }
+@keyframes rounded {
+    from{
+        color: rgb(2,0,36);
+        color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(139,50,92,1) 35%, rgba(0,212,255,1) 100%);
+    }
+    to{
+        letter-spacing: 45px;
+        transform: rotatey(360deg);
+    }
+}
+@keyframes death {
+    from{
+        transform-origin: top center;        
+        transform: rotate(-25deg);
+
+    }
+    to{
+        transform-origin: top center;        
+        transform: rotate(25deg);
+    }
+  }
+
+#kill{
+    position: relative;
+    bottom: 94px;
+    animation-name: death;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+#adam{
+    border: solid 3px blanchedalmond;
+    border-radius: 10%;
+    padding-top: 95px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+#refresh{
+    
+    bottom: 0px;
+    padding: 4px;
+    border: double 3px wheat;
+    border-radius: 30%;
+    background-color: wheat;
+    font-size: larger;
+    font-weight: bold;
+
+}
+.headguess{
+    /* width: 35px; */
+    font-size: 40px;
+    color: blanchedalmond;
+    letter-spacing: 8px;
+}
+#refreshdiv{
+    position: absolute;
+    bottom: 0px;
+    justify-content: center;
+}
+@media screen and (min-width: 576px) {
+    #harf{
+        position: relative;
+        top: 100px;
+    }
+    #tahmin{
+        position: relative;
+        top: 100px;
+    }
+    #areaword{
+        position: relative;
+        top: 100px;
+    }
+    #baslik{
+        position: relative;
+        top: 100px;
+        color: blanchedalmond;
+        letter-spacing: 5px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    #alert{
+        position: relative;
+        top: 120px;
+        border: solid blanchedalmond;
+        display: inline;
+        border: 10%;
+        font-size: large;
+        color: blanchedalmond;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        letter-spacing: 3px;
+        box-shadow: 5px 10px 15px blanchedalmond;
+    }
+    #letters{
+        display: flex;
+        flex-wrap: wrap;
+        top: 150px;
+        font-size: x-large;
+        letter-spacing: 5px;
+        color: red;
+    }
+    #guess,#value{
+        width: 50%;
+    }
+  }
+#baslik{
+    color: blanchedalmond;
+    letter-spacing: 5px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+#all{
+    position: relative;
+    top: 50px;
+}
+#alert{
+    border: solid blanchedalmond;
+    border-radius: 30%;
+    color: blanchedalmond;
+    font-weight: bold;
+    letter-spacing: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.anm{
+    animation-name: result;
+    animation-duration: 4s; 
+    animation-iteration-count: infinite;
+}
+@keyframes result {
+    from{
+        color: rgb(2,0,36);
+        color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(139,50,92,1) 35%, rgba(0,212,255,1) 100%);
+    }
+    to{
+       color: blanchedalmond;
+    }
+}
+#letters{
+    position: relative;
+    color: blanchedalmond;
+    font-size: large;
+    letter-spacing: 2px;
+    bottom: -8px;
+}
+#joker,#guessbtn{
+    position: relative;
+    bottom: 2px;
+}
