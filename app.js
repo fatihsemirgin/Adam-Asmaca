@@ -25,15 +25,15 @@ let alert = document.querySelector("#alert")
 let baslik =document.querySelector("#baslik")
 let letters = document.querySelector("#letters")
 
-// let subject = prompt("Konuyu Yazınız: Arabalar ya da Şehirler")
-// if(subject != null){
-//     if(subject.includes("araba")){
-//         sehirler=[...cars]
-//         baslik.innerHTML=`
-//             ${"ARABALAR"}
-//         `
-//     }   
-// }
+let subject = prompt("Konuyu Yazınız: Arabalar ya da Şehirler")
+if(subject != null){
+    if(subject.includes("araba")){
+        sehirler=[...cars]
+        baslik.innerHTML=`
+            ${"ARABALAR"}
+        `
+    }   
+}
 const arr = []
 let game_flag=true
 let number = Math.round(Math.random()*sehirler.length)
@@ -82,14 +82,16 @@ function hint() {
             if(!randoms.includes(hint_letter)){
                 randoms.push(hint_letter)
                 hit_count++;
-                console.table(randoms);
+                console.log("count "+count);
+                console.log("hint "+hit_count);
+                // console.table(randoms);
                 break;
             }
         }
         indexes[hint_letter]=hint_letter
         fill(indexes)
     }
-    if(hit_count===sehirler[number].length){
+    if((hit_count+count)===sehirler[number].length){
         showAlert("Joker Yardımıyla İle Kazandın :(")
         gameover()
     }
@@ -118,15 +120,17 @@ function refr() {
 }
 function verify() {
     let flag=false
-    if(letter.value!="" && !(templet.includes(letter.value))){
-        if(sehirler[number].toLocaleLowerCase().includes(letter.value)){
+    if(letter.value!="" && !(templet.includes(letter.value.toLocaleLowerCase()))){
+        if(sehirler[number].toLocaleLowerCase().includes(letter.value.toLocaleLowerCase())){
             flag=true
             for (let index = 0; index < sehirler[number].length; index++) {
                 if(letter.value.toLocaleLowerCase()===sehirler[number][index].toLocaleLowerCase()){
                     indexes[index]=index
-                    randoms[index]=index
-                    hit_count++;
-                    count++;
+                    if(!randoms.includes(index)){
+                        randoms[index]=index
+                        // hit_count++;
+                        count++;
+                    }
                 }
             }
             // console.table(indexes)
@@ -161,7 +165,9 @@ function verify() {
         <span>${"Kullanılanlar :"+templet}</span>
     `
     letter.value=""
-    if(count===size){
+    console.log("count "+count);
+    console.log("hint "+hit_count);
+    if(((count+hit_count)===size)){
         showAlert("Tebrikler Kelimeyi Buldun !!!")
         gameover()
     }
