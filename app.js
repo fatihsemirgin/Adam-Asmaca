@@ -38,7 +38,6 @@ const arr = []
 let game_flag=true
 let number = Math.round(Math.random()*sehirler.length)
 console.log(sehirler[number].toLocaleLowerCase());
-const size = sehirler[number].length
 let count=0;let count2=0; let hit_count=0;let templet=""
 for (let index = 0; index < sehirler[number].length; index++) {
     let li = document.createElement("li")
@@ -167,7 +166,7 @@ function verify() {
     letter.value=""
     console.log("count "+count);
     console.log("hint "+hit_count);
-    if(((count+hit_count)===size)){
+    if(((count+hit_count)===sehirler[number].length)){
         showAlert("Tebrikler Kelimeyi Buldun !!!")
         gameover()
     }
