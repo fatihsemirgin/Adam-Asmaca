@@ -38,7 +38,7 @@ const arr = []
 let game_flag=true
 let number = Math.round(Math.random()*sehirler.length)
 console.log(sehirler[number].toLocaleLowerCase());
-let count=0;let count2=0; let hit_count=0;let templet=""
+let count=0;let count2=0; let templet=""
 for (let index = 0; index < sehirler[number].length; index++) {
     let li = document.createElement("li")
     li.innerHTML=`
@@ -80,20 +80,21 @@ function hint() {
                 hint_letter--;              
             if(!randoms.includes(hint_letter)){
                 randoms.push(hint_letter)
-                hit_count++;
+                count++;
                 console.log("count "+count);
-                console.log("hint "+hit_count);
-                // console.table(randoms);
                 break;
             }
         }
         indexes[hint_letter]=hint_letter
+        console.log("indexes");
+        console.table(indexes)
         fill(indexes)
     }
-    if((hit_count+count)===sehirler[number].length){
+    if(count===sehirler[number].length){
         showAlert("Joker Yardımıyla İle Kazandın :(")
         gameover()
     }
+    console.table(randoms)
 }
 function showAlert(params) {
     alert.children[0].innerHTML=`
@@ -124,10 +125,8 @@ function verify() {
             flag=true
             for (let index = 0; index < sehirler[number].length; index++) {
                 if(letter.value.toLocaleLowerCase()===sehirler[number][index].toLocaleLowerCase()){
-                    indexes[index]=index
-                    if(!randoms.includes(index)){
-                        randoms[index]=index
-                        // hit_count++;
+                    if(!indexes.includes(index)){
+                        indexes[index]=index;
                         count++;
                     }
                 }
@@ -165,8 +164,8 @@ function verify() {
     `
     letter.value=""
     console.log("count "+count);
-    console.log("hint "+hit_count);
-    if(((count+hit_count)===sehirler[number].length)){
+    console.table(indexes)
+    if(((count)===sehirler[number].length)){
         showAlert("Tebrikler Kelimeyi Buldun !!!")
         gameover()
     }
